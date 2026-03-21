@@ -9,3 +9,11 @@ tsconfig.tsbuildinfo
 private/
 .replit
 replit.nix
+# ── Sensitive / machine-specific files ───────────────────────────────────────
+# Convention: xyz_maskedexample is committed (safe template)
+#             xyz is ignored (real local values)
+# Sensitivity basis spectrum: paths (low) → API keys (high) — same pattern for all
+#paths.config
+obsidian_notes_path.config
+# ── VS-Code Navation files 
+Quartz_AV.code-workspace
