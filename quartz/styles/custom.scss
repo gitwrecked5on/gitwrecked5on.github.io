@@ -1,3 +1,21 @@
 @use "./base.scss";
+// custom.scss
+// ─────────────────────────────────────────────────────────────────────────────
+// All site customisations live here. Never edit base.scss directly.
+// ─────────────────────────────────────────────────────────────────────────────
 
-// put your custom CSS here!
+// ── BACKGROUND: Deep Grid (teal cartesian grid on dark navy) ─────────────────
+body {
+  background-color: #080c10;
+  background-image:
+    linear-gradient(rgba(0,255,200,0.04) 1px, transparent 3px),
+    linear-gradient(90deg, rgba(0,255,200,0.04) 1px, transparent 3px);
+  background-size: 32px 32px;
+  background-attachment: fixed;
+}
+
+// ── HIDE DATES ────────────────────────────────────────────────────────────────
+// Remove this block when you want dates visible again
+.content-meta {
+  display: none;
+}
