@@ -1,9 +1,9 @@
 ---
-title: Hosting your (my?) website
+title: Hosting your website
 ---
 
 
-This site runs on a stack I've adopted to avoid being locked into walled gardens and platforms that seem to be racing towards through enshittification toward evil-megacorporations. I am looking at you Amazon `I'm finding some content in my Ads`, Google `Stop tracking me already`. Microsoft `I'm pretty sure window is an advertisement for MacOS and Linux`
+This site runs on a stack I've adopted to avoid being locked into walled gardens and platforms that seem to be racing towards through enshittification and consolidation by evil-megacorporations.
 
 A part of my larger motivation to move towards local setups under the philosophy of #flowcal 
 

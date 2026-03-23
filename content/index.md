@@ -6,5 +6,8 @@ A garden of half-finished thoughts, stories around things I've built, and learni
 
 Currently trying to figure out what this whole AI thing is about and slowly trying to ensure [[We have AI at home]]
 
-These are a few pages from a larger brain dump that I pretend to organize frequently and succeed at occasionally. [[Hosting your (my?) website|Here's how I've set this up]]
+These are a few pages from a larger brain dump that I pretend to organize frequently and succeed at occasionally. [[Hosting your website|Here's how I've set this up]]
+
+> [!WARNING]
+> This is a warning.
 
