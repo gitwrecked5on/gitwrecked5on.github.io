@@ -1,7 +1,7 @@
 
 Language models are genuinely interesting. The science is good. The 
 applications are good. The part that gets complicated is who owns the 
-infrastructure — and what that means over time.
+infrastructure - and what that means over time.
 
 This is a practical note about running models locally. What I set up, 
 what I used it for, and where I think it's going. #flowcal 
@@ -12,7 +12,7 @@ what I used it for, and where I think it's going. #flowcal
 
 Every prompt you send to a hosted model passes through infrastructure 
 you don't control. That's fine for most things. It becomes less fine 
-when the data is personal — financial records, private documents, 
+when the data is personal - financial records, private documents, 
 anything you'd rather not have sitting in someone else's logs.
 
 There's also the simpler question of dependency. Pricing changes. 
@@ -27,16 +27,16 @@ Hence, `AI at home`
 
 Two tools, both open source:
 
-**[Ollama](https://ollama.com)** — runs the model locally. Manages 
+**[Ollama](https://ollama.com)** - runs the model locally. Manages 
 downloads, loads models into memory, and exposes a clean API. This is `the Brain`
 
-**[OpenWebUI](https://openwebui.com)** — a browser-based chat interface 
+**[OpenWebUI](https://openwebui.com)** - a browser-based chat interface 
 that connects to Ollama. Runs in Docker. Looks like ChatGPT, runs on 
 your machine. This is `the interface`
 ### Setting It Up
 
 Install [Docker Desktop](https://www.docker.com/products/docker-desktop/) 
-first — OpenWebUI runs as a container and Docker Desktop gives you a 
+first - OpenWebUI runs as a container and Docker Desktop gives you a 
 clean way to manage it without touching the terminal much.
 
 Then, install Ollama and pull the models:
@@ -62,8 +62,8 @@ Open `localhost:3000` in your browser. That's it
 
 ### Models
 
-- **Mistral** — fast and coherent. Good default for most tasks.
-- **Qwen 2.5** — better at structured output and longer context. 
+- **Mistral** - fast and coherent. Good default for most tasks.
+- **Qwen 2.5** - better at structured output and longer context. 
   My current preference for anything format-heavy.
 
 ---
@@ -71,7 +71,7 @@ Open `localhost:3000` in your browser. That's it
 ## First Real Use Case: Automated Reports
 
 Once the local stack was running, the first thing I wired up was 
-automated yearly report generation — using N8N, a workflow automation 
+automated yearly report generation - using N8N, a workflow automation 
 tool, also self-hosted via Docker.
 
 The short version: documents go in, structured summaries come out, 
@@ -88,11 +88,11 @@ interested in building is a privacy-first personal finance layer.
 
 Concretely:
 
-- **Personal accountant** — categorises transactions, tracks patterns, 
+- **Personal accountant** - categorises transactions, tracks patterns, 
   answers questions about your own numbers.
-- **Financial teacher** — explains concepts against your actual data. 
+- **Financial teacher** - explains concepts against your actual data. 
   Generic advice is abundant; personalised context is not.
-- **Document processor** — reads contracts, loan agreements, term 
+- **Document processor** - reads contracts, loan agreements, term 
   sheets. Summarises and flags. Locally.
 
 The models exist. The tooling exists. It's mostly a building problem.
@@ -109,4 +109,4 @@ cynical about the first.
 
 ---
 
-*Building something similar or have questions — [find me here](#).*
+*Building something similar or have questions - [find me here](#).*

@@ -2,10 +2,9 @@
 title: Hosting your website
 ---
 
+This site runs on a stack I've adopted to avoid being locked into walled gardens and platforms that seem to be racing towards through ~~enshittification~~  planned obsolescence thanks to the tech overlords that shape much of our modern life.
 
-This site runs on a stack I've adopted to avoid being locked into walled gardens and platforms that seem to be racing towards through enshittification and consolidation by evil-megacorporations.
-
-A part of my larger motivation to move towards local setups under the philosophy of #flowcal 
+This is a part of my larger motivation to learn how to build and use local setups under the philosophy of #flowcal - Which involves moving towards products, both tech and otherwise, where the user retains most of the control. I've some yet-to-be-curated thoughts about it [[Why Flowcal]]
 
 Here's the full setup:
 
@@ -18,9 +17,11 @@ Here's the full setup:
 
 The recommended structure is one main Obsidian vault for everything, with a dedicated subfolder for public-facing content. 
 
+If you write a lot of random stuff that you keep losing because you can't be bothered to structure them (I'm definitely not talking about myself), then Obsidian is for you.
+
 ### 2. Syncthing - Sync Across Devices Without the Cloud
 
-[Syncthing](https://syncthing.net) keeps the Obsidian vault in sync across devices - in this case, a Mac and a Windows laptop. It's peer-to-peer: devices talk directly to each other, no third-party server ever sees the files.
+[Syncthing](https://syncthing.net) keeps the Obsidian vault in sync across devices - in this case, a MacOS desktop, an Android phone, and a Windows laptop. Syncthing is open source and peer-to-peer: devices talk directly to each other through encrypted lines, no third-party server ever sees the files.
 
 The code is fully auditable. If cybersecurity is your thing, check it out: [Syncthing Docs](https://docs.syncthing.net).
 
@@ -65,7 +66,7 @@ if [[ -z "$SOURCE_PATH" ]]; then
   exit 1
 fi
 
-rsync -av --delete \
+rsync -username --delete \
   --exclude='.obsidian/' \
   --exclude='.trash/' \
   --exclude='*.canvas' \
@@ -84,7 +85,7 @@ To enable this:
 - Go to the repository on GitHub
 - Settings - Pages - Source: select **GitHub Actions**
 
-That's it. The pipeline handles the rest.
+That's it. The pipeline handles the rest. Your brand new website is now up and running at `yourusername.github.io`
 
 ---
 
@@ -98,14 +99,12 @@ git push                       # triggers auto-deploy, live in ~40 seconds
 
 ---
 
-## What's Next
+## What 
 
-Hoenstly? I dont know 
+Honestly? I dont know - This entire website would become a living connected document that slowly evolves over time. But I wish to use this entire space for 3 things:
 
-The goal from the start was to adopt a platform that I would do 3 things:
-
-1. Iteratively build an online presence, one that could work with my chaotic approach to the very act of thinking itself. 
-2. Allow me to fully control my own destiny. Well ok not destiny, but full control over building this website as am entity I could grow, organically.
+1. Iteratively build an online presence in a way that would synchronize with my chaotic approach to the very act of thinking itself. 
+2. Allow me to fully control my own destiny. Well, ok not destiny maybe - but full control over building this website as an entity I could grow, organically, ands
 
 While going down the [Quartz](https://quartz.jzhao.xyz). rabbit hole I came across something written by the project's creator that resonated deeply with me - what he calls the [Digital Garden](https://jzhao.xyz/posts/networked-thought).
 

@@ -6,8 +6,7 @@ export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [],
-  footer: Component.Footer
-()
+  footer: Component.Footer()
 // (
 //   {
 //     links: {
@@ -16,7 +15,6 @@ export const sharedPageComponents: SharedLayout = {
 //     },
 //   }),
 }
-
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [

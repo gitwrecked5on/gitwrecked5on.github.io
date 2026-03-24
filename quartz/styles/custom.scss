@@ -3,19 +3,84 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // All site customisations live here. Never edit base.scss directly.
 // ─────────────────────────────────────────────────────────────────────────────
-
-// ── BACKGROUND: Deep Grid (teal cartesian grid on dark navy) ─────────────────
-body {
-  background-color: #080c10;
-  background-image:
-    linear-gradient(rgba(0,255,200,0.04) 1px, transparent 3px),
-    linear-gradient(90deg, rgba(0,255,200,0.04) 1px, transparent 3px);
-  background-size: 32px 32px;
-  background-attachment: fixed;
-}
-
 // ── HIDE DATES ────────────────────────────────────────────────────────────────
 // Remove this block when you want dates visible again
 .content-meta {
   display: none;
+}
+
+// - Testing stuff below --
+// ── HIDE LIGHT MODE TOGGLE ────────────────────────────────────────────────────
+// Light mode isn't properly styled - hiding toggle until fixed
+// .darkmode {
+//   display: none;
+// }
+// ── WIDER CONTENT AREA ────────────────────────────────────────────────────────
+// Quartz default sidebar is conservative - push it out
+:root {
+  --sidebar-width: 10rem;        // default is ~14rem, increase if you want more
+  --content-width: 500px;        // default is ~750px
+}
+// ── BACKGROUND: Theme-aware Cartesian Grid ────────────────────────────────────
+// Dark mode (default)
+// ── BACKGROUND: Theme-aware Cartesian Grid ────────────────────────────────────
+// Dark mode - teal grid on dark navy (default)
+:root[saved-theme="dark"] body, body {
+  background-color: #080c10;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Ctext x='4' y='12' font-family='monospace' font-size='8' fill='rgba(0,255,200,0.07)'%3E(0,0)%3C/text%3E%3Ctext x='84' y='12' font-family='monospace' font-size='8' fill='rgba(0,255,200,0.05)'%3E(1,0)%3C/text%3E%3Ctext x='4' y='92' font-family='monospace' font-size='8' fill='rgba(0,255,200,0.05)'%3E(0,1)%3C/text%3E%3C/svg%3E"),
+    linear-gradient(rgba(0,255,200,0.03) 0.75px, transparent 0.75px),
+    linear-gradient(90deg, rgba(0,255,200,0.03) 1px, transparent 0.75px),
+    linear-gradient(rgba(0,255,200,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,200,0.02) 1px, transparent 1px);
+  background-size:
+    125px 125px,    // SVG coordinate label tile - matches major grid
+    125px 125px,    // major grid lines
+    125px 125px,
+    25px 25px,    // minor grid (subdivisions, keep as factor of major)
+    25px 25px;
+  background-attachment: fixed;
+}
+
+// Light mode - muted green grid on warm white
+:root[saved-theme="light"] body {
+  background-color: #f7f7f2;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Ctext x='4' y='12' font-family='monospace' font-size='8' fill='rgba(0,100,80,0.12)'%3E(0,0)%3C/text%3E%3Ctext x='84' y='12' font-family='monospace' font-size='8' fill='rgba(0,100,80,0.09)'%3E(1,0)%3C/text%3E%3Ctext x='4' y='92' font-family='monospace' font-size='8' fill='rgba(0,100,80,0.09)'%3E(0,1)%3C/text%3E%3C/svg%3E"),
+    linear-gradient(rgba(0,255,200,0.03) 0.75px, transparent 0.75px),
+    linear-gradient(90deg, rgba(0,255,200,0.03) 1px, transparent 0.75px),
+    linear-gradient(rgba(0,100,80,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,100,80,0.03) 1px, transparent 1px);
+   background-size:
+    125px 125px,    // SVG coordinate label tile - matches major grid
+    125px 125px,    // major grid lines
+    125px 125px,
+    25px 25px,    // minor grid (subdivisions, keep as factor of major)
+    25px 25px;
+  background-attachment: fixed;
+}
+// ── WIDER CONTENT AREA ────────────────────────────────────────────────────────
+.page {
+  max-width: 1800px !important;
+}
+@media (min-width: 1200px) {
+  #quartz-body {
+    grid-template-columns: 280px auto 280px !important;
+  }
+}
+// ── SIDEBAR: Truncate long note names with ellipsis ───────────────────────────
+// .explorer-content li > a {
+//   white-space: nowrap;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   display: block;  // required for text-overflow to work on anchor tags
+// }
+// ── SIDEBAR: Add spacing between note items ───────────────────────────────────
+// ── IMAGES: Blend dark-background images into site background ─────────────────
+:root[saved-theme="dark"] article img,
+article img {
+  mix-blend-mode: lighten;   // black becomes transparent on dark bg
+}
+:root[saved-theme="light"] article img {
+  mix-blend-mode: normal;    // restore normal rendering in light mode
 }
