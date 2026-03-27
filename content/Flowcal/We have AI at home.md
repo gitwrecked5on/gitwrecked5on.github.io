@@ -1,6 +1,5 @@
 
-Language models are genuinely interesting. The science is good. The 
-applications are good. The part that gets complicated is who owns the 
+Language models are genuinely interesting. The science is good. The applications are good. The part that gets complicated is who owns the 
 infrastructure - and what that means over time.
 
 This is a practical note about running models locally. What I set up, 
